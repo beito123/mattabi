@@ -1,0 +1,56 @@
+{
+  "name": "mattabi",
+  "version": "1.0.0",
+  "main": "./dist/main/index.js",
+  "scripts": {
+    "dev": "node .electron-nuxt/check-engines.js && cross-env-shell NODE_ENV=development node .electron-nuxt/index.js",
+    "build": "node .electron-nuxt/check-engines.js && cross-env-shell NODE_ENV=production node .electron-nuxt/index.js",
+    "test": "",
+    "lint": "node_modules/.bin/eslint --ext .js,.vue,.ts -f ./node_modules/eslint-friendly-formatter ./src",
+    "lint:fix": "yarn run lint -- --fix",
+    "preinstall": "node .electron-nuxt/check-engines.js",
+    "postinstall": "electron-builder install-app-deps & yarn run lint:fix"
+  },
+  "keywords": [],
+  "author": "beito",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.13.0"
+  },
+  "resolutions": {
+    "@types/node": "12.12.6"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "5.12.1",
+    "@nuxt/typescript-build": "0.5.8",
+    "@nuxtjs/eslint-config-typescript": "1.0.2",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "@xpda-dev/core": "^0.1.5",
+    "@xpda-dev/electron-builder": "^0.1.1",
+    "@xpda-dev/electron-launcher": "^0.1.1",
+    "@xpda-dev/webpack-step": "^0.1.2",
+    "browser-env": "3.3.0",
+    "cross-env": "7.0.2",
+    "deepmerge": "4.2.2",
+    "electron": "8.1.1",
+    "electron-builder": "22.4.1",
+    "electron-debug": "3.0.1",
+    "eslint": "5.16.0",
+    "eslint-friendly-formatter": "4.0.1",
+    "eslint-loader": "3.0.3",
+    "node-sass": "4.13.1",
+    "nuxt": "2.11.0",
+    "sass-loader": "8.0.2",
+    "ts-loader": "^6.2.1",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "typescript": "^3.8.3",
+    "vue-devtools": "5.1.3",
+    "webpack": "4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "1.7.2"
+  },
+  "dependencies": {
+    "feather-icons": "^4.26.0",
+    "vue-feather": "^1.0.0"
+  }
+}
