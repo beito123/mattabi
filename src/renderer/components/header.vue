@@ -4,41 +4,41 @@
       Monaka
     </div>
     <div class="button-box">
-      <button type="button" class="button-update" v-on:click="min">
-        <feather type="minus"></feather>
+      <button type="button" class="button-update" @click="min">
+        <feather type="minus" />
       </button>
-      <button type="button" class="button-update" v-on:click="max">
-        <feather type="square"></feather>
+      <button type="button" class="button-update" @click="max">
+        <feather type="square" />
       </button>
-      <button type="button" class="button-update" v-on:click="close">
-        <feather type="x"></feather>
+      <button type="button" class="button-update" @click="close">
+        <feather type="x" />
       </button>
     </div>
   </header>
 </template>
 
 <script>
-import { remote } from "electron"
+import { remote } from 'electron'
 
 export default {
-    methods: {
-        min: function() {
-            var window = remote.getCurrentWindow()
-            window.minimize();
-        },
-        max: function() {
-            var window = remote.getCurrentWindow()
-            if (!window.isMaximized()) {
-                window.maximize()
-            } else {
-                window.unmaximize();
-            }
-        },
-        close: function() {
-            var window = remote.getCurrentWindow()
-            window.close();
-        }
+  methods: {
+    min () {
+      const window = remote.getCurrentWindow()
+      window.minimize()
+    },
+    max () {
+      const window = remote.getCurrentWindow()
+      if (!window.isMaximized()) {
+        window.maximize()
+      } else {
+        window.unmaximize()
+      }
+    },
+    close () {
+      const window = remote.getCurrentWindow()
+      window.close()
     }
+  }
 }
 </script>
 
@@ -85,7 +85,7 @@ export default {
             &:hover {
                 background-color: darken($base, 8%);
             }
-            
+
             &:active {
                 background-color: darken($base, 15%);
             }

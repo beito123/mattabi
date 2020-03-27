@@ -21,7 +21,7 @@ module.exports = {
   ],
   styleResources: {
     scss: [
-     '~/assets/scss/common.scss'
-     ]
-   }
+      '~/assets/scss/common.scss'
+    ]
+  }
 }

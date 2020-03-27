@@ -1,9 +1,8 @@
 <template>
-    <div id="container">
-        <sidebar />
-        <div id="content">
-        </div>
-    </div>
+  <div id="container">
+    <sidebar />
+    <div id="content" />
+  </div>
 </template>
 
 <script>
@@ -36,4 +35,5 @@ export default {
         "list-content"
         "search-content";
 }
+
 </style>
