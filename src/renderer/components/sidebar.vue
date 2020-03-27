@@ -51,7 +51,8 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .sidebar {
     height: 100%;
-    background-color: brown; // debug
+    background-color: $white;
+    //background-color: brown; // debug
 
     display: grid;
     grid-template-columns: auto; // 横
@@ -61,6 +62,8 @@ export default Vue.extend({
 #status-content {
     display: flex; // 横並び
     padding: 35px 30px;
+
+    background-color: $white;
 
     .text {
         margin: auto; // auto center
@@ -82,7 +85,7 @@ export default Vue.extend({
     align-items: center; // 上下 中央寄せ
 
     .feather, i {
-        padding: 0 5%;
+        padding: 0 4%;
         flex-basis: 30%; // 画像の位置調整
     }
 }

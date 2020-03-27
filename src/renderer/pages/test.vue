@@ -1,14 +1,23 @@
 <template>
-  <div id="container">
-    <sidebar />
-    <div id="content" />
-  </div>
+    <div id="container">
+        <sidebar />
+        <div id="content">
+            <applist />
+            <div id="search-content">
+                Search
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
 import sidebar from '@/components/sidebar'
+import applist from '@/components/applist'
 export default {
-  components: { sidebar }
+    components: { 
+        sidebar,
+        applist
+    }
 }
 </script>
 
@@ -16,6 +25,8 @@ export default {
 #container {
     display: grid;
     height: 100%;
+
+    background-color: $white;
 
     grid-template-rows: auto; // 縦
     grid-template-columns: 280px 1fr; // 横 1frは残りの領域
@@ -30,10 +41,16 @@ export default {
 
     display: grid;
     grid-template-columns: auto; // 横
-    grid-template-rows: 1fr 50px; // 縦
+    grid-template-rows: 1fr 35px; // 縦
     grid-template-areas: // 分割した領域(area)の配置と名称を決める
         "list-content"
         "search-content";
+}
+
+#search-content {
+    grid-area: "search-content";
+
+    background-color: blueviolet;
 }
 
 </style>

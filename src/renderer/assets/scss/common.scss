@@ -72,6 +72,22 @@ $gray: #607D8B;
     text-rendering: optimizeLegibility;
 }
 
+/* 
+    Fonts
+*/
+
+$font-family: "Noto Sans", "KosugiMaru", sans-serif;
+
+@font-face {
+	font-family: 'Noto Sans';
+	src: url(../assets/font/NotoSans-Regular.ttf) format("truetype")
+}
+
+@font-face {
+	font-family: 'KosugiMaru'; // For Japanese
+	src: url(../assets/font/KosugiMaru-Regular.ttf) format("truetype")
+}
+
 // 文字選択を禁止する
 * {
     user-select: none;
@@ -105,8 +121,18 @@ $gray: #607D8B;
     }
 }
 
+// Common
+
+body {
+    font-family: $font-family;
+
+    //background-color: blue; // debug
+    background-color: $white;
+}
 
 button {
+    font-family: $font-family;
+    
     padding: 0px 8px;
     border: none;
     

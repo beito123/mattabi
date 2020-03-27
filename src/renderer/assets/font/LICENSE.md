@@ -28,7 +28,7 @@ Thank you!!!
 - URL: https://www.google.com/get/noto/
 - URL2: https://github.com/googlefonts/noto-fonts
 
-## Kosugi Maru (Kosugi Maru.ttf)
+## Kosugi Maru (KosugiMaru-Regular)
 
 - Author: [MOTOYA](http://www.motoya.co.jp/index.html)
 - License: [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)
