@@ -1,20 +1,20 @@
 <template>
-  <header class="main-header">
-    <div class="title">
-      Monaka
-    </div>
-    <div class="button-box">
-      <button type="button" class="button-update" @click="min">
-        <feather type="minus" />
-      </button>
-      <button type="button" class="button-update" @click="max">
-        <feather type="square" />
-      </button>
-      <button type="button" class="button-update" @click="close">
-        <feather type="x" />
-      </button>
-    </div>
-  </header>
+    <header class="main-header">
+        <div class="title">
+            Monaka
+        </div>
+        <div class="button-box">
+            <button type="button" class="button-update" @click="min">
+                <i class="feather icon-minus"></i>
+            </button>
+            <button type="button" class="button-update" @click="max">
+                <i class="feather icon-square"></i>
+            </button>
+            <button type="button" class="button-update" @click="close">
+                <i class="feather icon-x"></i>
+            </button>
+        </div>
+    </header>
 </template>
 
 <script>
@@ -78,6 +78,7 @@ export default {
 
                 height: 18px;
                 width: 18px;
+                font-size: 18px;
 
                 color: $white;
             }

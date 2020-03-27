@@ -9,6 +9,69 @@ $blue: #2196F3;
 $clay: #455A64;
 $gray: #607D8B;
 
+/*
+    Material Icons. Thank you!
+    From https://github.com/google/material-design-icons
+*/
+
+@font-face {
+    font-family: "material";
+    font-style: normal;
+    font-weight: 400;
+    src: url(../assets/font/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+    font-family: "material" !important;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    
+    text-align: left;
+  
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/*
+    Feather Icons. Thank you!
+    From https://github.com/feathericons/feather (original)
+    From https://github.com/AT-UI/feather-font (font version)
+*/
+
+@font-face {
+    font-family: "feather";
+    font-style: normal;
+    font-weight: 400;
+    src: url(../assets/font/feather.ttf) format('truetype');
+}
+
+.feather {
+    font-family: "feather" !important;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    text-align: left;
+  
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
 // 文字選択を禁止する
 * {
     user-select: none;

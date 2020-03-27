@@ -19,6 +19,9 @@ module.exports = {
   modules: [
     '@nuxtjs/style-resources'
   ],
+  css: [
+    "@/assets/css/feather.css"
+  ],
   styleResources: {
     scss: [
       '~/assets/scss/common.scss'

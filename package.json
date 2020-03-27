@@ -48,8 +48,6 @@
     "webpack-node-externals": "1.7.2"
   },
   "dependencies": {
-    "core-js": "^2.6.11",
-    "feather-icons": "^4.26.0",
-    "vue-feather": "^1.0.0"
+    "core-js": "^2.6.11"
   }
 }

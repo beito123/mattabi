@@ -1,40 +1,40 @@
 <template>
-  <div class="sidebar">
-    <div id="status-content">
-      <feather type="check" />
-      <div class="text">
-        {{ message }}
-      </div>
-    </div>
-    <div id="sidemenu-content">
-      <button id="all-update" type="button">
-        <feather type="rotate-cw" />
-        <div class="text">
-          Update now
-        </div>
-      </button>
-      <div id="sidemenu-list">
-        <button type="button">
-          <feather type="download" />
-          <div class="text">
-            Install
-          </div>
-        </button>
-        <button type="button">
-          <i class="fas fa-history" />
-          <div class="text">
-            History
-          </div>
-        </button>
-        <button type="button">
-          <feather type="tool" />
-          <div class="text">
-            Settings
-          </div>
-        </button>
-      </div>
-    </div>
-  </div>
+	<div class="sidebar">
+		<div id="status-content">
+			<i class="feather icon-check"></i>
+			<div class="text">
+				{{ message }}
+			</div>
+		</div>
+		<div id="sidemenu-content">
+			<button id="all-update" type="button">
+				<i class="feather icon-rotate-cw"></i>
+				<div class="text">
+					Update now
+				</div>
+			</button>
+			<div id="sidemenu-list">
+				<button type="button">
+					<i class="feather icon-download"></i>
+					<div class="text">
+						Install
+					</div>
+				</button>
+				<button type="button">
+					<i class="material-icons">history</i>
+					<div class="text">
+						History
+					</div>
+				</button>
+				<button type="button">
+					<i class="feather icon-settings"></i>
+					<div class="text">
+						Settings
+					</div>
+				</button>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script lang="ts">
@@ -70,7 +70,9 @@ export default Vue.extend({
 
     .feather {
         height: 80px;
-        width: 80px;
+		width: 80px;
+		
+		font-size: 80px;
 
         color: $green;
     }
@@ -80,6 +82,7 @@ export default Vue.extend({
     align-items: center; // 上下 中央寄せ
 
     .feather, i {
+        padding: 0 5%;
         flex-basis: 30%; // 画像の位置調整
     }
 }
@@ -106,8 +109,10 @@ export default Vue.extend({
 
     .feather {
         color: $white;
-        height: 35px;
-        width: 35px;
+        height: 36px;
+		width: 36px;
+		
+		font-size: 36px;
     }
 
     .text {
@@ -137,9 +142,11 @@ export default Vue.extend({
             background-color: darken($white, 15%);
         }
 
-        .feather, i { // icon
-            height: 35px;
-            width: 35px;
+        .feather, .material-icons { // icon
+            height: 36px;
+            width: 36px;
+
+            font-size: 36px;
         }
 
         .text { // text
