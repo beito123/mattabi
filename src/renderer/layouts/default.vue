@@ -29,5 +29,7 @@ body {
     grid-template-columns: auto; // 横 1frは残りの領域
 
     grid-template-areas: ""; // 分割した領域(area)の配置と名称を決める
+
+    overflow: hidden;
 }
 </style>

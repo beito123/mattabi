@@ -24,7 +24,7 @@ export default {
 <style lang="scss" scoped>
 #container {
     display: grid;
-    height: 100%;
+    height: 100vh;
 
     background-color: $white;
 
@@ -35,8 +35,8 @@ export default {
 }
 
 #content {
-    grid-area: content; // gridシステムで分割した領域名
-    height: 100%;
+    grid-area: "content"; // gridシステムで分割した領域名
+    height: 100vh;
     //background-color: cadetblue; // debug
 
     display: grid;
@@ -47,10 +47,18 @@ export default {
         "search-content";
 }
 
+#list-content {
+    grid-area: "list-content";
+
+    height: 100%;
+}
+
 #search-content {
     grid-area: "search-content";
 
     background-color: blueviolet;
+
+    height: 100%;
 }
 
 </style>

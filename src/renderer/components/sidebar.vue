@@ -80,13 +80,14 @@ export default Vue.extend({
         color: $green;
     }
 }
+
 @mixin ibutton { // 画像付きのボタンのテンプレート
     display: flex; // 横並び
     align-items: center; // 上下 中央寄せ
 
     .feather, i {
         padding: 0 4%;
-        flex-basis: 30%; // 画像の位置調整
+        flex-basis: 25%; // 画像の位置調整
     }
 }
 

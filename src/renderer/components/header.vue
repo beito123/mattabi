@@ -1,7 +1,7 @@
 <template>
     <header class="main-header">
         <div class="title">
-            Monaka
+            Mattabi
         </div>
         <div class="button-box">
             <button type="button" class="button-update" @click="min">
