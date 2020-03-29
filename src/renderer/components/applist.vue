@@ -1,45 +1,43 @@
 <template>
-    <div id="list-content">
-        <div id="listview">
-            <div v-for="val of list" :key="val.Name" class="list-item">
-                <div class="icon">
-                    <i class="feather icon-cloud-drizzle"></i>
+    <div id="listview">
+        <div v-for="val of list" :key="val.Name" class="list-item">
+            <div class="icon">
+                <i class="feather icon-cloud-drizzle"></i>
+            </div>
+            <div class="des">
+                <div class="title-box">
+                    <div class="title">{{ val.Name }}</div>
+                    <div class="ver">{{ val.Version }}</div>
                 </div>
-                <div class="des">
-                    <div class="title-box">
-                        <div class="title">{{ val.Name }}</div>
-                        <div class="ver">{{ val.Version }}</div>
-                    </div>
-                    <span class="link">{{ val.Link }}</span>
-                    <div class="content">
-                        {{ val.Description }}
-                    </div>
+                <span class="link">{{ val.Link }}</span>
+                <div class="content">
+                    {{ val.Description }}
                 </div>
-                <div class="item-buttons">
-                    <button type=button class="button-update">
-                        <i class="feather icon-rotate-ccw"></i>
+            </div>
+            <div class="item-buttons">
+                <button type=button class="button-update">
+                    <i class="feather icon-rotate-ccw"></i>
+                    <div class="text">
+                        Update
+                    </div>
+                </button>
+                <hr>
+                <div class="button-bottom">
+                    <button type=button class="button-run">
+                        <i class="feather icon-play"></i>
                         <div class="text">
-                            Update
+                            Run
                         </div>
                     </button>
-                    <hr>
-                    <div class="button-bottom">
-                        <button type=button class="button-run">
-                            <i class="feather icon-play"></i>
-                            <div class="text">
-                                Run
-                            </div>
-                        </button>
-                        <button type=button class="button-icon uninstall">
-                            <i class="feather icon-trash"></i>
-                        </button>
-                        <button type=button class="button-icon info">
-                            <i class="feather icon-info"></i>
-                        </button>
-                        <button type=button class="button-icon settings">
-                            <i class="feather icon-settings"></i>
-                        </button>
-                    </div>
+                    <button type=button class="button-icon uninstall">
+                        <i class="feather icon-trash"></i>
+                    </button>
+                    <button type=button class="button-icon info">
+                        <i class="feather icon-info"></i>
+                    </button>
+                    <button type=button class="button-icon settings">
+                        <i class="feather icon-settings"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -276,14 +274,9 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-#list-content {
-    background-color: $background;
-    
-    height: 100%;
-}
-
 #listview {
-    padding: 0 10px;
+    padding: 0 5px;
+    background-color: $background;
 
     height: 100%;
     

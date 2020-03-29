@@ -2,7 +2,9 @@
     <div id="container">
         <sidebar />
         <div id="content">
-            <applist />
+            <div id="list-content">
+                <applist />
+            </div>
             <div id="search-content">
                 Search
             </div>
@@ -22,9 +24,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$content-search-height: 32px;
+$content-list-height: calc(#{$win-content-height} - #{$content-search-height});
+
 #container {
     display: grid;
-    height: 100vh;
+    height: 100%;
 
     background-color: $white;
 
@@ -35,26 +40,26 @@ export default {
 }
 
 #content {
-    grid-area: "content"; // gridシステムで分割した領域名
-    height: 100vh;
+    grid-area: content; // gridシステムで分割した領域名
+    height: 100%;
     //background-color: cadetblue; // debug
 
     display: grid;
+    grid-template-rows: 1fr $content-search-height; // 縦
     grid-template-columns: auto; // 横
-    grid-template-rows: 1fr 35px; // 縦
     grid-template-areas: // 分割した領域(area)の配置と名称を決める
         "list-content"
         "search-content";
 }
 
 #list-content {
-    grid-area: "list-content";
+    grid-area: list-content;
 
-    height: 100%;
+    height: $content-list-height;
 }
 
 #search-content {
-    grid-area: "search-content";
+    grid-area: search-content;
 
     background-color: blueviolet;
 

@@ -9,6 +9,9 @@ $blue: #2196F3;
 $clay: #455A64;
 $gray: #607D8B;
 
+$win-header-height: 32px;
+$win-content-height: calc(100vh - #{$win-header-height});
+
 /*
     Material Icons. Thank you!
     From https://github.com/google/material-design-icons
