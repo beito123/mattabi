@@ -1,13 +1,13 @@
 <template>
     <div id="listview">
-        <div v-for="val of list" :key="val.Name" class="list-item">
+        <div v-for="(val, index) in list" :key="val.ID" class="list-item">
             <div class="icon">
-                <i class="feather icon-cloud-drizzle"></i>
+                <i class="feather" :class="`icon-${list[index].Icon}`"></i>
             </div>
             <div class="des">
-                <div class="title-box">
-                    <div class="title">{{ val.Name }}</div>
-                    <div class="ver">{{ val.Version }}</div>
+                <div class="name-content">
+                    <div class="name">{{ val.Name }}</div>
+                    <div class="ver">v{{ val.Version }}</div>
                 </div>
                 <span class="link">{{ val.Link }}</span>
                 <div class="content">
@@ -47,223 +47,120 @@
 <script lang="ts">
 import Vue from 'vue'
 interface App {
+    ID: number,
     Name: string;
     Version: string;
     Link: string;
     Description: string;
+    Icon: string;
 }
 var testdata: App[] = [
-    {
-        Name: "Kaffa Smell",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell2",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell3",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell4",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell5",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell6",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell7",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell8",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell9",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell10",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell11",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell12",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell13",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell14",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell15",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell16",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell17",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell18",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell19",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell20",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell21",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell22",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell23",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell24",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell25",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell26",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell27",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell28",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell29",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell30",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell31",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell32",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell33",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell34",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    },
-    {
-        Name: "Kaffa Smell35",
-        Version: "v1.5.3",
-        Link: "http://kaffa-kaffa.smell",
-        Description: "This is a great drink. It can be drunk anytime anywhere anyone. So it means that's a great super ultra power drink.",
-    }
-]
+{
+  "ID": 1,
+  "Name": "Alpha",
+  "Version": "0.8.8",
+  "Link": "http://simplemachines.org",
+  "Description": "risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in",
+  "Icon": "globe"
+}, {
+  "ID": 2,
+  "Name": "Cookley",
+  "Version": "6.9.0",
+  "Link": "http://w3.org",
+  "Description": "lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id",
+  "Icon": "home"
+}, {
+  "ID": 3,
+  "Name": "Opela",
+  "Version": "4.0",
+  "Link": "http://psu.edu",
+  "Description": "primis in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan",
+  "Icon": "bluetooth"
+}, {
+  "ID": 4,
+  "Name": "Bigtax",
+  "Version": "2.3.7",
+  "Link": "https://angelfire.com",
+  "Description": "gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae",
+  "Icon": "server"
+}, {
+  "ID": 5,
+  "Name": "Fixflex",
+  "Version": "0.8.5",
+  "Link": "https://google.pl",
+  "Description": "at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed",
+  "Icon": "sunset"
+}, {
+  "ID": 6,
+  "Name": "Rank",
+  "Version": "7.29",
+  "Link": "https://youtu.be",
+  "Description": "imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis",
+  "Icon": "dollar-sign"
+}, {
+  "ID": 7,
+  "Name": "Cardguard",
+  "Version": "4.8",
+  "Link": "https://bing.com",
+  "Description": "justo sollicitudin ut suscipit a feugiat et eros vestibulum ac",
+  "Icon": "moon"
+}, {
+  "ID": 8,
+  "Name": "Voltsillam",
+  "Version": "2.9.4",
+  "Link": "http://tuttocitta.it",
+  "Description": "bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit",
+  "Icon": "unlock"
+}, {
+  "ID": 9,
+  "Name": "Flexidy",
+  "Version": "2.91",
+  "Link": "http://lycos.com",
+  "Description": "elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget",
+  "Icon": "link-2"
+}, {
+  "ID": 10,
+  "Name": "Bytecard",
+  "Version": "0.86",
+  "Link": "https://cargocollective.com",
+  "Description": "sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec",
+  "Icon": "user-minus"
+}, {
+  "ID": 11,
+  "Name": "Solarbreeze",
+  "Version": "0.4.4",
+  "Link": "https://ning.com",
+  "Description": "id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed",
+  "Icon": "slash"
+}, {
+  "ID": 12,
+  "Name": "Konklux",
+  "Version": "0.2.1",
+  "Link": "https://oakley.com",
+  "Description": "vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus",
+  "Icon": "git-commit"
+}, {
+  "ID": 13,
+  "Name": "Tampflex",
+  "Version": "4.7",
+  "Link": "http://google.ca",
+  "Description": "commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit",
+  "Icon": "align-left"
+}, {
+  "ID": 14,
+  "Name": "Duobam",
+  "Version": "2.7.6",
+  "Link": "http://youku.com",
+  "Description": "morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in",
+  "Icon": "refresh-cw"
+}, {
+  "ID": 15,
+  "Name": "Job",
+  "Version": "0.1.5",
+  "Link": "http://usgs.gov",
+  "Description": "montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque",
+  "Icon": "folder-minus"
+}]
 export default Vue.extend({
     data: function() {
         return {
@@ -321,12 +218,12 @@ export default Vue.extend({
 
         padding-right: 8px;
 
-        .title-box {
+        .name-content {
             display: flex; // 横並び
             align-items: center; // 上下 中央寄せ
         }
 
-        .title {
+        .name {
             font-size: 22px;
             font-weight: normal;
 
@@ -379,7 +276,7 @@ export default Vue.extend({
 
     hr {
         margin: 5px 18px;
-        border-color: $gray;
+        border-color: $lite-gray;
         border-radius: 6px;
         border-width: 0.5px 0 0.5px 0;
     }
@@ -440,8 +337,10 @@ export default Vue.extend({
         }
 
         .text {
-            padding: 0 0 0 4px;
             margin: auto;
+            padding-left: 4px;
+
+            font-size: 15px;
         }
         
         &:hover {
@@ -468,6 +367,8 @@ export default Vue.extend({
             width: 21px;
 
             font-size: 21px;
+
+            color: $gray;
 
             //stroke: $gray;
             //stroke-width: 2.5px;

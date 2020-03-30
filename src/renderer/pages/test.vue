@@ -6,7 +6,7 @@
                 <applist />
             </div>
             <div id="search-content">
-                Search
+                <search />
             </div>
         </div>
     </div>
@@ -15,16 +15,18 @@
 <script>
 import sidebar from '@/components/sidebar'
 import applist from '@/components/applist'
+import search from '@/components/search'
 export default {
     components: { 
         sidebar,
-        applist
+        applist,
+        search
     }
 }
 </script>
 
 <style lang="scss" scoped>
-$content-search-height: 32px;
+$content-search-height: 40px;
 $content-list-height: calc(#{$win-content-height} - #{$content-search-height});
 
 #container {
@@ -61,9 +63,9 @@ $content-list-height: calc(#{$win-content-height} - #{$content-search-height});
 #search-content {
     grid-area: search-content;
 
-    background-color: blueviolet;
+    //background-color: blueviolet; // debug
 
-    height: 100%;
+    height: $content-search-height;
 }
 
 </style>
